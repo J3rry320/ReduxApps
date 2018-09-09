@@ -1,7 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Cookie');
+body{
+  font-family: 'Cookie', cursive;
+  height: 100%;
+  text-transform: capitalize;
+
+}
+.padding-left{
+  padding-left:1%;
+}
 .left-span{
   display: inline-block;
   vertical-align: middle;
 }
-.material-icons{
+.material-icons, .flag-icon{
   font-size:32px;
+}
+.flag-icon-hide{
+  display: none;
+}
+.collection-item:hover{
+  cursor: pointer;
+  background-color: #3f3f3f;
+  color:#fff;
+}
+.collection-item:focus{
+  background-color: #3f3f3f;
+  color:#fff;
+}
+.collection-item{
+  font-size:27px;
+
+}
+.padding-top{
+  padding-top: .5%;
+}
+strong ,em{
+  font-size:28px;
+  border-bottom: 1px solid #000
+}
+.underline{
+  text-decoration: underline
+}
+.link:hover{
+  text-decoration: underline;
+
+}
+.link{
+
+  font-size: 18px;
+  text-transform: uppercase;
 }

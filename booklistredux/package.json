@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "ajv": "^6.5.2",
+    "axios": "^0.18.0",
     "country-list": "^1.1.0",
-    "countrynames": "^0.1.1",
     "flag-icon-css": "^3.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",

@@ -13,7 +13,7 @@ class Booklist extends Component {
             document.body.scrollTop=0;
             document.documentElement.scrollTop = 0;
           }}
-          key={book.title}
+          key={book.link}
           className="collection-item justify"
         >
           {book.title}
