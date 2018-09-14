@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Cookie');
+
+body {
+  font-family: 'Cookie', cursive;
+  height: 100vh;
+  text-transform: capitalize;
+  background-color: #333333;
+  color:#fff;
+  overflow-x: hidden;
+}
+.margin-top{
+  margin-top:5%
+}
+.padding-left {
+  padding-left: 1%;
+}
+.padding-top{
+  padding-top:8%;
+}
+.padding-right {
+  padding-right: 2.4%;
+}
+
+.padding-top-icon {
+  padding-top: 3%;
+}
+
+.material-icons,
+.flag-icon {
+  font-size: 32px;
+}
+
+.flag-icon-hide {
+  display: none;
+}
+
+.list-collection {
+
+  height:91vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.list-collection-item:hover {
+  cursor: pointer;
+  background-color:  #fff;
+  color:#000 ;
+}
+
+.list-collection-item {
+border-bottom:1px solid #f6f6f6;
+font-size: 24px;
+padding:5% 0 5% 0;
+text-align: justify;
+}
+
+.collection-item {
+  font-size: 27px;
+}
+
+
+
+strong,
+em {
+  font-size: 28px;
+  border-bottom: 1px solid #000
+}
+
+.underline {
+  text-decoration: underline
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link {
+  font-size: 18px;
+  text-transform: uppercase;
+  color:#fff
+}
+.full-height{
+  height: 100vh;
+}
