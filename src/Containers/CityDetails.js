@@ -5,25 +5,34 @@ import {Grid,Segment} from 'semantic-ui-react';
 import Graph from './Graphs';
 class CityDetails extends Component{
     render(){
-
-        if(!this.props.weather){
+console.log(this.props)
+        if(!this.props.state.weather){
             return("Type Bitch")
         }
         return(
-            <Grid>
-                <Grid.Row columns={'equal'} divided>
-<Grid.Column>
+            <Grid columns={2} celled>
+                <Grid.Row stretched divided>
+<Grid.Column >
 
 
-<Card data={this.props.weather}/>
+<Card data={this.props.state.weather}/>
 
 </Grid.Column>
-<Grid.Column>
+
+
+<Grid.Column >
     <Segment>
-        <Graph data={this.props.weather.list} kind={"temp"}/>
+        <Graph data={this.props.state.weather.list} kind={"temp"}/>
+
     </Segment>
+
+
     <Segment>
-        1
+        <Graph data={this.props.state.weather.list} kind={"humidity"}/>
+    </Segment>
+
+    <Segment>
+        <Graph data={this.props.state.weather.list} kind={"pressure"}/>
     </Segment>
 </Grid.Column>
                 </Grid.Row>
@@ -34,7 +43,11 @@ class CityDetails extends Component{
     }
 
 }
-function mapStateToProps({weather}){
-    return ({weather})
+function mapStateToProps(state){
+    const { weather, news } = state;
+    return {
+      state: { weather, news }
+    };
+
 }
 export default connect(mapStateToProps)(CityDetails)

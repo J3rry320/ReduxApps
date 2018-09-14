@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchWeather} from '../Actions'
+import {fetchNews} from '../Actions'
 import {bindActionCreators} from 'redux';
 import {Container,Grid, Input, Button,Icon } from 'semantic-ui-react'
 
@@ -22,6 +23,7 @@ InputHandler(e){
 }
 onSubmit(e){
   e.preventDefault();
+  this.props.fetchNews(this.state.term);
   this.props.fetchWeather(this.state.term);
   this.setState({term:" "})
 
@@ -54,7 +56,7 @@ onSubmit(e){
   }
 }
 function mapDispatchToProps(dispatch){
-return bindActionCreators({fetchWeather},dispatch);
+return bindActionCreators(Object.assign({}, {fetchWeather}, {fetchNews}),dispatch);
 
 }
 
