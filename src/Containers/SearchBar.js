@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
-import {fetchWeather} from '../Actions'
-import {fetchNews} from '../Actions'
+import {fetchWeather} from '../Actions';
+import { searchWiki } from "../Actions";
+import {fetchNews} from '../Actions';
 import {bindActionCreators} from 'redux';
 import {Container,Grid, Input, Button,Icon } from 'semantic-ui-react'
 
@@ -11,13 +12,12 @@ constructor(props){
   this.state={
     term:""
   }
-  this.InputHandler=this.InputHandler.bind(this)
-  this.onSubmit=this.onSubmit.bind(this)
+  this.InputHandler=this.InputHandler.bind(this);
+
+  this.onSubmit=this.onSubmit.bind(this);
 }
 
-  focus = () => {
-    this.inputRef.focus()
-  }
+
 InputHandler(e){
   this.setState({term:e.target.value})
 }
@@ -25,7 +25,9 @@ onSubmit(e){
   e.preventDefault();
   this.props.fetchNews(this.state.term);
   this.props.fetchWeather(this.state.term);
-  this.setState({term:" "})
+  this.props.searchWiki(this.state.term);
+
+  this.setState({term:` `})
 
 }
   render() {
@@ -36,7 +38,7 @@ onSubmit(e){
       <Grid.Column>
       <center className="padding-top">
       <form onSubmit={this.onSubmit}>
-      <Input value={this.state.term} onChange={this.InputHandler} action={   <Button   color='blue'>
+      <Input   value={this.state.term} onChange={this.InputHandler} action={   <Button   color='blue'>
         <Icon name='search' />
  Search
       </Button>} size='huge'   placeholder='Enter  name of the city' />
@@ -56,7 +58,7 @@ onSubmit(e){
   }
 }
 function mapDispatchToProps(dispatch){
-return bindActionCreators(Object.assign({}, {fetchWeather}, {fetchNews}),dispatch);
+return bindActionCreators(Object.assign({}, {fetchWeather}, {fetchNews},{searchWiki}),dispatch);
 
 }
 

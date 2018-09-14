@@ -1,13 +1,15 @@
 import React from 'react'
 import {  Card,Icon, Image } from "semantic-ui-react";
+import Wiki from './wiki';
+
 const WeatherCard=(props)=>{
     return(
-        <Card>
+        <Card fluid>
         <Image src='/images/avatar/large/matthew.png' />
         <Card.Content>
           <Card.Header>{props.data.city.name}</Card.Header>
           <Card.Meta>
-            <span className='date'>Joined in 2015</span>
+ <Wiki data={props.wiki}/>
           </Card.Meta>
           <Card.Description>Matthew is a musician living in Nashville.</Card.Description>
         </Card.Content>
