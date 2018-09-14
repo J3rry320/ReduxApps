@@ -13,7 +13,7 @@ class CityDetails extends Component {
       <Grid columns={2} celled>
         <Grid.Row stretched divided>
           <Grid.Column>
-            <Card data={this.props.state.weather} wiki={this.props.state.wiki} news={this.props.state.news} />
+            <Card data={this.props.state.weather} wiki={this.props.state.wiki} image={this.props.state.image} news={this.props.state.news} />
           </Grid.Column>
 
           <Grid.Column>
@@ -35,9 +35,9 @@ class CityDetails extends Component {
   }
 }
 function mapStateToProps(state) {
-  const { weather, news,wiki } = state;
+  const { weather, news,wiki,image } = state;
   return {
-    state: { weather, news,wiki }
+    state: { weather, news,wiki,image }
   };
 }
 export default connect(mapStateToProps)(CityDetails);

@@ -45,4 +45,22 @@ export function searchWiki(bookName) {
 
 
   }
+  export const GOOGLE_SEARCH="GOOGLE_SEARCH"
+  export  function ImageSearch(cityName){
+      const request=    axios.get("https://www.googleapis.com/customsearch/v1?", {
+        params: {
+            q: `${cityName} skyline`.replace(/\s/g, '+'),
+            searchType: 'image',
+            cx: "011398632660458645263:qplvgzzfvko",
+            key: "AIzaSyDICqZ-UdNtD4n5LKjdgYwwfWJi0mFVQG0"
+        }
+    })
+    return {
+        type:GOOGLE_SEARCH,
+        payload:request
+    }
+
+  }
+
+
 
